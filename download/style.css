@@ -1,0 +1,114 @@
+:root {
+    --light-background: #F2F2F7;
+    --dark-background: #17191C;
+    --pack-button-hover: #e1e1e8;
+    --pack-button-active: #c9c9d3;
+    --pack-card-dark: #22242B;
+    --pack-button-dark: #353842;
+    --pack-button-hover-dark: #4F5463;
+    --pack-button-active-dark: #2B2D36;
+}
+
+
+* {
+    font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, Roboto,"Segoe UI", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+h4 {
+    font-weight: 500
+}
+
+body {
+    background: var(--light-background);
+}
+
+
+#packBtn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    background-color: var(--light-background);
+    min-width: 280px;
+    max-width: 372px;
+    height: 52px;
+    padding-top: 16px;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 18px;
+    border: 2px solid rgba(0,0,0,0.025);
+    transition: background-color 0.4s;
+    transition: all 0.6s cubic-bezier(.16,.86,.46,.97);
+}
+
+#packBtn:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+    background-color: var(--pack-button-hover);
+}
+#packBtn:active {
+    transform: translate(-50%, -50%) scale(0.95);
+    background-color: var(--pack-button-active);
+}
+
+
+#topLeft {
+    position: relative;
+    left: 25px;
+    top: 15px;
+    width: 90%;
+}
+
+#packName {
+    position: relative;
+    top: 25px;
+    color: black;
+}
+
+#back {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+}
+
+#back:before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-radius: 2px;
+    transform: translate(0, -50%) rotate(-45deg);
+}
+
+@media(prefers-color-scheme: dark) {
+    body {
+        background: var(--dark-background);
+    }
+
+    #back, #packName {
+        color: var(--light-background);
+    }
+
+    #back::before {
+        border-color: var(--light-background);
+    }
+    
+    #packBtn {
+        border: 2px solid rgba(255,255,255,0.025);
+        background-color: var(--pack-button-dark);
+        color: white;
+    }
+    
+    #packBtn:hover {
+        background-color: var(--pack-button-hover-dark);
+    }
+    #packBtn:active {
+        background-color: var(--pack-button-active-dark);
+    }
+}
